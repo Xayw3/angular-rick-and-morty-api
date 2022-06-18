@@ -1,0 +1,22 @@
+<input type="text" [(ngModel)]="inputValue" placeholder="Enter character name">
+<button (click)="changeNameParam()">Search</button>
+<select (change)="changeGenderParam()" [(ngModel)]="genderParam" name="gender">
+  <option value="">Any</option>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="unknown">Unknown</option>
+</select>
+<div class="characters">
+  <div class="card" *ngFor="let character of characters">
+    <img [src]=[character.image] alt="">
+    <p>{{ character.name }}</p>
+    <p>{{ character.gender }}</p>
+    <p>{{ character.episode.length }}</p>
+    <a *ngIf="character.location.url" [routerLink]="['/locations', character.location.url]">{{ character.location.name }}</a>
+    <br>
+    <a *ngIf="character.origin.url" [routerLink]="['/locations', character.origin.url]">{{ character.origin.name }}</a>
+  </div>
+</div>
+<div class="pagination">
+  <button (click)="changePage(i)" *ngFor="let page of pages let i = index">{{ page }}</button>
+</div>

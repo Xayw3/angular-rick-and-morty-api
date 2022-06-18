@@ -1,0 +1,10 @@
+<input type="text" [(ngModel)]="nameParam" placeholder="Enter location name">
+<input type="text" [(ngModel)]="dimensionParam" placeholder="Enter dimension">
+<button (click)="changeParams()">Filter</button>
+<div class="locations">
+  <div class="card" *ngFor="let location of locations">
+    <p>{{ location.name }}</p>
+    <p>{{ location.dimension }}</p>
+    <p>{{ location.residents.length }}</p>
+  </div>
+</div>

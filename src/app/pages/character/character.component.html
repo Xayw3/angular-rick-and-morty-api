@@ -1,0 +1,8 @@
+<div class="characters">
+  <div class="card" *ngFor="let character of characters">
+    <img [src]=[character.image] alt="">
+    <p>{{ character.name }}</p>
+    <p>{{ character.gender }}</p>
+    <p>{{ character.episode.length }}</p>
+  </div>
+</div>
